@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:exercise/zone.dart';
 
@@ -27,6 +25,7 @@ class Zone extends StatelessWidget {
         title: Center(
           child: Text(
             zone.title,
+            textScaleFactor: 0.9,
           ),
         ),
         backgroundColor: Colors.black,
@@ -50,7 +49,7 @@ class _Buttons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-       color: Colors.yellow,
+      color: Colors.blue,
     );
   }
 }
@@ -62,7 +61,7 @@ class _Middle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-       color: Colors.red,
+      color: Colors.grey[100],
     );
   }
 }
@@ -74,22 +73,44 @@ class _Image extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blue,
+      color: Colors.black,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Expanded(
-            flex: 4,
+            flex: 5,
             child: Image.asset(
               zone.imageURL,
               fit: BoxFit.cover,
             ),
           ),
           Expanded(
-            flex: 1,
+            flex: 2,
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
+                Icon(
+                  Icons.bookmark_border,
+                  color: Colors.grey,
+                  size: 40.0,
+                ),
+                SizedBox(width: 60),
+                 Icon(
+                  Icons.favorite,
+                  color: Colors.grey,
+                  size: 40.0,
+                ),
+                SizedBox(width: 60),
+                 Icon(
+                  Icons.favorite,
+                  color: Colors.grey,
+                  size: 40.0,
+                ),
+                SizedBox(width: 60),
+                 Icon(
+                  Icons.favorite,
+                  color: Colors.grey,
+                  size: 40.0,
+                ),
               ],
             ),
           )
