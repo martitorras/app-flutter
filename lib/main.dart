@@ -94,12 +94,12 @@ class _Buttons extends StatelessWidget {
             children: <Widget>[
               Container(
                 width: 180,
-                height: 50,
+                height: 45,
                 child: Center(
                   child: BuildText(
                     text: 'View sub-areas',
-                    fontSize: 20,
-                    colors: Colors.white,
+                    fontSize: 18,
+                    colors: Colors.grey[100],
                   ),
                 ),
                 decoration: ShapeDecoration(
@@ -110,12 +110,12 @@ class _Buttons extends StatelessWidget {
               ),
               Container(
                 width: 180,
-                height: 50,
+                height: 45,
                 child: Center(
                   child: BuildText(
                     text: 'Search routes',
-                    fontSize: 20,
-                    colors: Colors.white,
+                    fontSize: 18,
+                    colors: Colors.grey[100],
                   ),
                 ),
                 decoration: ShapeDecoration(
@@ -131,12 +131,12 @@ class _Buttons extends StatelessWidget {
             children: <Widget>[
               Container(
                 width: 180,
-                height: 50,
+                height: 45,
                 child: Center(
                   child: BuildText(
                     text: 'Area Map',
-                    fontSize: 20,
-                    colors: Colors.white,
+                    fontSize: 18,
+                    colors: Colors.grey[100],
                   ),
                 ),
                 decoration: ShapeDecoration(
@@ -147,7 +147,7 @@ class _Buttons extends StatelessWidget {
               ),
               Container(
                 width: 180,
-                height: 50,
+                height: 45,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -158,8 +158,8 @@ class _Buttons extends StatelessWidget {
                     ),
                     BuildText(
                       text: 'Download',
-                      fontSize: 20,
-                      colors: Colors.white,
+                      fontSize: 18,
+                      colors: Colors.grey[100],
                     ),
                   ],
                 ),
@@ -211,9 +211,9 @@ class _Middle extends StatelessWidget {
               ],
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     BuildText(
                       text: '${zone.totalClimbs} Total Climbs',
@@ -266,104 +266,139 @@ class _Image extends StatelessWidget {
         children: <Widget>[
           Expanded(
             flex: 5,
-            child: Image.asset(
-              zone.imageURL,
-              fit: BoxFit.cover,
-            ),
-          ),
-          Expanded(
-            flex: 2,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            child: Stack(
+              //alignment: AlignmentDirectional.bottomCenter,
               children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    SizedBox(height: 5),
-                    Container(
-                      child: Center(
-                        child: Icon(
-                          Icons.bookmark_border,
-                          color: Colors.grey[400],
-                          size: 30.0,
-                        ),
+                Image.asset(
+                  zone.imageURL,
+                  fit: BoxFit.cover,
+                ),
+                Align(
+                  alignment: Alignment(0.96, 0.4),
+                  child: Container(
+                    width: 120,
+                    height: 17,
+                    child: Center(
+                      child: BuildText(
+                        text: 'Download all photos',
+                        fontSize: 12,
+                        colors: Colors.black,
                       ),
                     ),
-                    BuildText(
-                      text: 'Bookmark',
-                      fontSize: 16,
-                      colors: Colors.grey[400],
+                    decoration: ShapeDecoration(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(2))),
+                      color: Colors.grey[400].withAlpha(200),
                     ),
-                  ],
-                ),
-                VerticalDivider(
-                  color: Colors.grey[400],
-                ),
-                Column(
-                  children: <Widget>[
-                    SizedBox(height: 5),
-                    Container(
-                      child: Center(
-                        child: BuildText(
-                          text: '${zone.toDos}',
-                          fontSize: 25,
-                          colors: Colors.grey[400],
-                        ),
-                      ),
-                    ),
-                    BuildText(
-                      text: 'To-Dos',
-                      fontSize: 16,
-                      colors: Colors.grey[400],
-                    ),
-                  ],
-                ),
-                VerticalDivider(
-                  color: Colors.grey[400],
+                  ),
                 ),
                 Column(
                   children: <Widget>[
-                    SizedBox(height: 5),
-                    Container(
-                      child: Center(
-                        child: BuildText(
-                          text: '${zone.ticks}',
-                          fontSize: 25,
-                          colors: Colors.grey[400],
+                    Expanded(
+                      flex: 3,
+                      child: Container(),
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        color: Colors.black38,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            Column(
+                              children: <Widget>[
+                                SizedBox(height: 5),
+                                Container(
+                                  child: Center(
+                                    child: Icon(
+                                      Icons.bookmark_border,
+                                      color: Colors.grey[400],
+                                      size: 30.0,
+                                    ),
+                                  ),
+                                ),
+                                BuildText(
+                                  text: 'Bookmark',
+                                  fontSize: 14,
+                                  colors: Colors.grey[400],
+                                ),
+                              ],
+                            ),
+                            VerticalDivider(
+                              color: Colors.grey[400],
+                            ),
+                            Column(
+                              children: <Widget>[
+                                SizedBox(height: 5),
+                                Container(
+                                  child: Center(
+                                    child: BuildText(
+                                      text: '${zone.toDos}',
+                                      fontSize: 25,
+                                      colors: Colors.grey[400],
+                                    ),
+                                  ),
+                                ),
+                                BuildText(
+                                  text: 'To-Dos',
+                                  fontSize: 14,
+                                  colors: Colors.grey[400],
+                                ),
+                              ],
+                            ),
+                            VerticalDivider(
+                              color: Colors.grey[400],
+                            ),
+                            Column(
+                              children: <Widget>[
+                                SizedBox(height: 5),
+                                Container(
+                                  child: Center(
+                                    child: BuildText(
+                                      text: '${zone.ticks}',
+                                      fontSize: 25,
+                                      colors: Colors.grey[400],
+                                    ),
+                                  ),
+                                ),
+                                BuildText(
+                                  text: 'Ticks',
+                                  fontSize: 14,
+                                  colors: Colors.grey[400],
+                                ),
+                              ],
+                            ),
+                            VerticalDivider(
+                              color: Colors.grey[400],
+                            ),
+                            Column(
+                              children: <Widget>[
+                                SizedBox(height: 5),
+                                Container(
+                                  child: Center(
+                                    child: Icon(
+                                      Icons.share,
+                                      color: Colors.grey[400],
+                                      size: 30.0,
+                                    ),
+                                  ),
+                                ),
+                                BuildText(
+                                  text: 'Share',
+                                  fontSize: 14,
+                                  colors: Colors.grey[400],
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
                       ),
                     ),
-                    BuildText(
-                      text: 'Ticks',
-                      fontSize: 16,
-                      colors: Colors.grey[400],
-                    ),
                   ],
-                ),
-                VerticalDivider(
-                  color: Colors.grey[400],
-                ),
-                Column(
-                  children: <Widget>[
-                    SizedBox(height: 5),
-                    Container(
-                      child: Center(
-                        child: Icon(
-                          Icons.share,
-                          color: Colors.grey[400],
-                          size: 30.0,
-                        ),
-                      ),
-                    ),
-                    BuildText(
-                      text: 'Share',
-                      fontSize: 16,
-                      colors: Colors.grey[400],
-                    ),
-                  ],
-                ),
+                )
               ],
             ),
-          )
+          ),
         ],
       ),
     );
