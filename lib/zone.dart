@@ -1,6 +1,6 @@
 class ClimbingZone {
   String title, place;
-  String imageURL;
+  String imageURL, graphURL;
   int toDos, ticks;
   int latitude, longitude;
   int totalClimbs;
@@ -10,6 +10,7 @@ class ClimbingZone {
     this.title,
     this.place,
     this.imageURL,
+    this.graphURL,
     this.toDos,
     this.ticks,
     this.latitude,
@@ -27,6 +28,7 @@ final yosemite = ClimbingZone(
   'Yosemite National Park',
   'California',
   'assets/yosemite.jpg',
+  'assets/graph.png',
   12,
   3,
   37744,

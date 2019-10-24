@@ -243,7 +243,24 @@ class _Middle extends StatelessWidget {
                     ),
                   ],
                 ),
-                Column(),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        SizedBox(width: 36),
+                        Container(
+                          height: 120,
+                          width: 120,
+                          child: Image.asset(
+                            zone.graphURL,
+                            fit: BoxFit.scaleDown,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ],
             ),
           ],
