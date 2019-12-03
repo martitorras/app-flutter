@@ -6,7 +6,7 @@ class ClimbingZone {
   int totalClimbs;
   int trad, sport, topRope, bouldering, other;
 
-  ClimbingZone(
+  ClimbingZone({
     this.title,
     this.place,
     this.imageURL,
@@ -21,22 +21,21 @@ class ClimbingZone {
     this.topRope,
     this.bouldering,
     this.other,
-  );
-}
+  });
 
-final yosemite = ClimbingZone(
-  'Yosemite National Park',
-  'California',
-  'assets/yosemite.jpg',
-  'assets/graph.png',
-  12,
-  3,
-  37744,
-  -119599,
-  1838,
-  1235,
-  268,
-  111,
-  584,
-  23,
-);
+ClimbingZone.fromJson(Map<String, dynamic>json):
+  title = json['title'],
+  place = json['place'],
+  imageURL = json['imageURL'],
+  graphURL = json['graphURL'],
+  toDos = json['toDos'],
+  ticks = json['ticks'],
+  latitude = json['latitude'].toDouble(),
+  longitude = json['longitude'].toDouble(),
+  totalClimbs = json['totalClimbs'],
+  trad = json['trad'],
+  sport = json['sport'],
+  topRope = json['topRope'],
+  bouldering = json['bouldering'],
+  other = json['other'];
+}
